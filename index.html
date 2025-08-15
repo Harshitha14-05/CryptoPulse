@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoView*</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💹 CryptoView*</h1>
+
+    <!-- Search -->
+    <input type="text" id="search" placeholder="Search cryptocurrency..." />
+
+    <!-- Sort Buttons -->
+    <div class="sort-buttons">
+      <button onclick="sortBy('gainers')">Top Gainers</button>
+      <button onclick="sortBy('losers')">Top Losers</button>
+      <button onclick="sortBy('priceHigh')">Price High → Low</button>
+      <button onclick="sortBy('priceLow')">Price Low → High</button>
+    </div>
+
+    <!-- Last Updated -->
+    <p id="last-updated">Last Updated: --</p>
+
+    <!-- Loading -->
+    <div id="loading">Fetching latest prices...</div>
+
+    <!-- Cards -->
+    <div id="crypto-container" class="cards"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="crypto-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <img id="modal-logo" src="" alt="Logo">
+        <h2 id="modal-name"></h2>
+      </div>
+      <p id="modal-price"></p>
+      <p id="modal-change"></p>
+      <p id="modal-marketcap"></p>
+      <p id="modal-volume"></p>
+      <div class="modal-chart-container">
+        <canvas id="modal-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
